@@ -1,6 +1,6 @@
 # Orio™
 
-[Orio](https://oe2i.org/orio)™ is an open-source [Laravel](https://laravel.com/) Blade component library developed by [OE2i™](https://oe2i.com/), built on [Bootstrap](https://getbootstrap.com/) and licensed under the Apache License.
+[Orio](https://oe2i.org/orio)™ is an open-source [Laravel](https://laravel.com/) Blade component library developed by [OE2i™](https://oe2i.com/), built on [Bootstrap](https://getbootstrap.com/) and licensed under the Apache License. Orio is built on [Groy](https://oe2i.org/groy)™.
 
 ## Licensing
 
