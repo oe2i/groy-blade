@@ -2,7 +2,13 @@
 @use('Groy\Xeno\Theme\AssetX')
 @props(['href' => null, 'src' => null])
 
-@if($href)
+@php
+	if (!$href && !$src) {
+		$href = 'all';
+	}
+@endphp
+
+@if ($href)
 	@php
 		$href = StringX::begin()->ifNot($href, 'css/');
 		$href = StringX::end()->ifNot($href, '.css');
@@ -10,7 +16,7 @@
 	<link rel="stylesheet" href="{{ AssetX::fa($href, false) }}">
 @endif
 
-@if($src)
+@if ($src)
 	@php
 		$src = StringX::begin()->ifNot($src, 'js/');
 		$src = StringX::end()->ifNot($src, '.js');
