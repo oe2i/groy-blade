@@ -27,12 +27,13 @@
 		$attributes[] = 'class="' . e($class) . '"';
 	}
 
-	if ($slot) {
+	if (!$slot->isEmpty()){
 		$content = $slot;
 	} elseif (StringX::has()->something($text)) {
 		$content = $text;
 	}
-	$content = $content ?? 'No Anchor';
+
+	$content = !empty($content) ? $content : 'No Anchor';
 
 	if (VarX::true($title) && !VarX::html($content)) {
 		$title = $content;
