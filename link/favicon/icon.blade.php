@@ -1,5 +1,3 @@
-@use('Groy\Xeno\Data\StringX')
-@use('Groy\Xeno\Theme\AssetX')
 @props(['href' => null, 'rel' => 'icon', 'sizes' => null])
 
 @if (StringX::end()->with($href, '.svg'))

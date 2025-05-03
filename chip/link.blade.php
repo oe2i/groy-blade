@@ -1,6 +1,3 @@
-@use('Groy\Xeno\Http\RouteX')
-@use('Groy\Xeno\Data\StringX')
-@use('Groy\Spine\Core\VarX')
 @props([
 	'text' => null,
 	'href',

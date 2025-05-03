@@ -1,5 +1,3 @@
-@use('Groy\Xeno\Data\StringX')
-@use('Groy\Xeno\Theme\AssetX')
 @props(['href' => null, 'src' => null])
 
 @php
