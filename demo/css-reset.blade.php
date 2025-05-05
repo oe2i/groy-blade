@@ -6,7 +6,6 @@
 		<title>CSS Reset | Orio</title>
 		<x-orio.omi.link.css href="orio::normalize" />
 		<x-orio.omi.link.css href="orio" />
-		<x-orio.omi.link.css href="simples" />
 		<style>
 			section {
 				margin-bottom: 2rem;
