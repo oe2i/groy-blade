@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="">
 
 	<head>
 		<meta charset="UTF-8" />
@@ -7,6 +7,33 @@
 		<x-orio.omi.link.css href="orio::normalize" />
 		<x-orio.omi.link.css href="orio" />
 		<style>
+			:root {
+				color-scheme: light dark;
+			}
+
+			html[data-theme="light"] {
+				background: #fff;
+				color: #000;
+			}
+
+			.button,
+			button,
+			input,
+			textarea,
+			select {
+				color: #000;
+				background: #FFF;
+			}
+
+			input[type="checkbox"] {
+				accent-color: dodgerblue;
+			}
+
+			html[data-theme="dark"] {
+				background: #111;
+				color: #eee;
+			}
+
 			section {
 				margin-bottom: 2rem;
 				padding: 2rem;
@@ -23,6 +50,7 @@
 					<li><a href="/">Home</a></li>
 					<li><a href="#link">Link</a></li>
 					<li><a href="#footer">Bottom</a></li>
+					<li><a href="#" class="toggle-theme">Toggle</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -211,6 +239,25 @@
 		<footer id="footer">
 			<p>&copy; 2025 Example. <a href="#header">Back to top</a></p>
 		</footer>
+
+
+		<script>
+			const toggleLink = document.querySelector('.toggle-theme');
+			toggleLink.addEventListener('click', (e) => {
+				e.preventDefault();
+				const current = document.documentElement.getAttribute('data-theme');
+				const next = current === 'light' ? 'dark' : 'light';
+				document.documentElement.setAttribute('data-theme', next);
+				localStorage.setItem('theme', next);
+			});
+
+			// Load saved theme on page load
+			const savedTheme = localStorage.getItem('theme');
+			if (savedTheme) {
+				document.documentElement.setAttribute('data-theme', savedTheme);
+			}
+		</script>
+
 	</body>
 
 </html>
