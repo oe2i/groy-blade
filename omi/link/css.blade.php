@@ -2,20 +2,18 @@
 
 @php
 
-	if (StrBeginX::with($href, 'orio::')) {
-		$href = 'orio/' . StrCropX::begin($href, 'orio::');
-	}
-
-	if ($href === 'orio') {
-		$href = 'orio/orio.css';
-	}
-
 	if (!$href) {
 		$href = EnvX::theme();
 	}
 
-	$href = $vendor ? StrEndX::ifNot($href, '.css') : $href;
-	$finalHref = $vendor ? AssetX::vendor($href, false) : AssetX::css($href, false);
+	$orioHref = OrioX::asset($href);
+	if ($orioHref) {
+		$finalHref = $orioHref;
+	} else {
+		$finalHref = $vendor ? AssetX::vendor($href, false) : AssetX::css($href, false);
+	}
+
+	$finalHref = StrEndX::ifNot($finalHref, '.css');
 @endphp
 
 @if ($rel === 'preload' || $noscript || $preload)
