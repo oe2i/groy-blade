@@ -2,6 +2,7 @@
 
 	<header id="header">
 		<h1>HTML Elements Test</h1>
+		<em>A simple tagline with <a href="/">home</a> and a <a href="/link">link</a></em>
 		<nav>
 			<ul>
 				<li><a href="/">Home</a></li>
