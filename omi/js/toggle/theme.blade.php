@@ -5,4 +5,4 @@
 	}
 @endphp
 
-const theme = new Theme("{{$key}}");
+			const theme = new Theme("{{$key}}");
