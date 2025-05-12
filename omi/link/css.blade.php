@@ -1,7 +1,6 @@
 @props(['href' => null, 'rel' => 'stylesheet', 'noscript' => false, 'preload' => false, 'vendor' => false])
 
 @php
-
 	if (!$href) {
 		$href = EnvX::theme();
 	}
@@ -14,15 +13,18 @@
 	}
 
 	$finalHref = StrEndX::ifNot($finalHref, '.css');
+	if(!EnvX::prod() && !empty($finalHref)){
+		$finalHref .= '?'.mt_rand();
+	}
 @endphp
 
 @if ($rel === 'preload' || $noscript || $preload)
-	<link rel="preload" as="style" href="{{ $finalHref }}" onload="this.onload=null;this.rel='stylesheet'">
+		<link rel="preload" as="style" href="{{ $finalHref }}" onload="this.onload=null;this.rel='stylesheet'">
 	@if ($noscript)
-		<noscript>
-			<link rel="stylesheet" href="{{ $finalHref }}">
-		</noscript>
+			<noscript>
+				<link rel="stylesheet" href="{{ $finalHref }}">
+			</noscript>
 	@endif
 @else
-	<link rel="{{ $rel }}" href="{{ $finalHref }}">
+		<link rel="{{ $rel }}" href="{{ $finalHref }}">
 @endif
