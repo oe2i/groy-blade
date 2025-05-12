@@ -22,6 +22,9 @@
 	}
 
 	$finalSrc = StrEndX::ifNot($finalSrc, '.js');
+	if(!EnvX::prod() && !empty($finalSrc)){
+		$finalSrc .= '?'.mt_rand();
+	}
 @endphp
 
 <script {!! $attributes !!} src="{{ $finalSrc }}"></script>
