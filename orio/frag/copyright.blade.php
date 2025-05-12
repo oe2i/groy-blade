@@ -1,0 +1,1 @@
+<span>© {{ date('Y') }} <a href="{{ RouteX::href('home') }}" title="{{ ProjectX::name() }}"><strong>{{ ProjectX::brand() }}</strong></a></span>
