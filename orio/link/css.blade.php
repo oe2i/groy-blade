@@ -5,7 +5,7 @@
 		$href = EnvX::theme();
 	}
 
-	$orioHref = OrioX::asset($href);
+	$orioHref = OrioX::asset($href, 'css');
 	if ($orioHref) {
 		$finalHref = $orioHref;
 	} else {
