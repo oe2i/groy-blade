@@ -14,7 +14,7 @@
 	if (!$src) {
 		$src = EnvX::theme();
 	}
-	$orioSrc = OrioX::asset($src);
+	$orioSrc = OrioX::asset($src, 'js');
 	if ($orioSrc) {
 		$finalSrc = $orioSrc;
 	} else {
